@@ -21,8 +21,9 @@ df = pd.read_csv('player.csv',
 # In[13]:
 
 
-print("Number of columns: {len(df.columns)}")
-df[df.columns[:4]].tail()
+print("Number of columns:", len(df.columns))
+print("\nTail(5):")
+print(df[df.columns[:4]].tail())
 
 
 # In[14]:
@@ -44,13 +45,14 @@ ax.set_ylim(0.)
 
 df_bis = pd.DataFrame({'points': points,
                        'aces': aces}).dropna()
-df_bis.tail()
+print('After dropping NaN values:\n')
+print(df_bis.tail())
 
 
 # In[17]:
 
 
-df_bis.corr()
+print('\nCorrelation:\n',df_bis.corr())
 
 
 # In[26]:
@@ -64,12 +66,12 @@ df_bis['manyaces'] = (df_bis['aces'] >
 
 # In[27]:
 
-
-pd.crosstab(df_bis['result'], df_bis['manyaces'])
+print('\nCross table:')
+print(pd.crosstab(df_bis['result'], df_bis['manyaces']))
 
 
 # In[28]:
 
-
-st.chi2_contingency(_)
+print('\nChi square contingency:')
+print(st.chi2_contingency(_))
 

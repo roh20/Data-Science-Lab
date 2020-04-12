@@ -32,16 +32,16 @@ print('Coefficient of determination:',rSquare)
 # In[39]:
 
 
-print('Intercept:',model.intercept_)
-print('Slope:',model.coef_)
+print('\nIntercept:',model.intercept_)
+print('\nSlope:',model.coef_)
 
 
 # In[41]:
 
 
 newModel = LinearRegression().fit(X,y.reshape(-1,1))
-print('New Intercept:',model.intercept_)
-print('New Slope:',model.coef_)
+print('\nNew Intercept:',model.intercept_)
+print('\nNew Slope:',model.coef_)
 
 
 # In[43]:
@@ -49,19 +49,19 @@ print('New Slope:',model.coef_)
 
 #Predictions
 y_pred = model.predict(X)
-print('Predictions:\n',y_pred)
+print('\nPrediction:\n',y_pred)
 
 
 # In[45]:
 
 
 y_pred = model.intercept_ + model.coef_ * X
-print('Predictions:\n',y_pred)
+print('\nPrediction using intercept and coefficient:\n',y_pred)
 
 
 # In[49]:
 
 
 XNew = np.arange(4).reshape(-1,1)
-print('Predictions:\n',model.predict(XNew))
+print('\nPrediction XNew:\n',model.predict(XNew))
 

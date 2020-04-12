@@ -16,8 +16,8 @@ import pandas as pd
 dataset = pd.read_csv('Salary_Data.csv')
 print('Dataset info')
 print(dataset.info())
-print('Checking null values')
-print(dataset.isnull())
+print('\nChecking null values')
+print(dataset.isnull().sum())
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 1].values
 
@@ -25,10 +25,10 @@ y = dataset.iloc[:, 1].values
 # In[3]:
 
 
-print("Dataset Shape:")
+print("\nDataset Shape:")
 print(dataset.shape)
-print("\n\nDataset head:\n")
-print(dataset.head)
+print("\n\nDataset head(5):\n")
+print(dataset.head(5))
 
 
 # In[4]:

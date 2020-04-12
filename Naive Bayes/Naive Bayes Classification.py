@@ -23,10 +23,10 @@ dataset['species'] = lb.fit_transform(dataset[ 'species'])
 # In[89]:
 
 
-print("Dataset informartion:\n")
+print("Dataset informartion:")
 dataset.info()
-print("\n\nDataset null info:\n")
-dataset.isnull()
+print("\n\nDataset null info:")
+print(dataset.isnull().sum())
 
 
 # In[90]:
@@ -35,6 +35,7 @@ dataset.isnull()
 # Storing independent and dependent variable
 X = dataset.iloc[:,0:-1]
 y = dataset.iloc[:,-1]
+print('\nHead(5) values for X and y:')
 print(X.head(5))
 print(y.head(5))
 
@@ -71,7 +72,7 @@ model.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = model.predict(X_test)
-print('Predictions:\n',y_pred)
+print('\nPredictions:\n',y_pred)
 
 
 # In[95]:
@@ -79,8 +80,8 @@ print('Predictions:\n',y_pred)
 
 # Confusion Matrix and classification report
 from sklearn.metrics import accuracy_score,classification_report,confusion_matrix
-print('Classification Report :\n',classification_report(y_test,y_pred))
-print('Confusion Matrix:\n',confusion_matrix(y_test,y_pred))
+print('\nClassification Report :\n',classification_report(y_test,y_pred))
+print('\nConfusion Matrix:\n',confusion_matrix(y_test,y_pred))
 import seaborn as sns
 sns.heatmap(confusion_matrix(y_test,y_pred), annot = True, cbar = True,xticklabels= ['sestosa','vsersi','virginica'],yticklabels =['sestosa','vsersi','virginica'])
 
@@ -90,7 +91,7 @@ sns.heatmap(confusion_matrix(y_test,y_pred), annot = True, cbar = True,xticklabe
 
 from sklearn.metrics import mean_absolute_error,mean_squared_error,r2_score
 import sklearn.metrics as mt
-print('Mean Absolute square error:',mean_absolute_error(y_test,y_pred))
+print('\nMean Absolute square error:',mean_absolute_error(y_test,y_pred))
 print('Mean squared error:', mean_squared_error(y_test,y_pred))
 print('Variance score:',r2_score(y_test,y_pred))
 print("Accuracy:",mt.accuracy_score(y_test, y_pred))

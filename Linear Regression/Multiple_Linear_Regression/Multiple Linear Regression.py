@@ -17,7 +17,7 @@ dataset = pd.read_csv('50_Startups.csv')
 print('Dataset info:\n')
 print(dataset.info())
 print('\n\nChecking null values:\n')
-print(dataset.isnull())
+print(dataset.isnull().sum())
 X = dataset.iloc[:, :-1].values # all columns except last
 y = dataset.iloc[:, 4].values   #last column
 
@@ -28,7 +28,7 @@ y = dataset.iloc[:, 4].values   #last column
 print("Dataset Shape:")
 print(dataset.shape)
 print("\n\nDataset head:\n")
-print(dataset.head)
+print(dataset.head(5))
 
 
 # In[10]:
@@ -71,15 +71,13 @@ y_pred = model.predict(X_test)
 
 # In[14]:
 
-
-y_pred
-
+print('\nPredictions:\n',y_pred)
 
 # In[15]:
 
 
 from sklearn.metrics import mean_absolute_error,mean_squared_error,r2_score
-print('Mean Absolute square error:',mean_absolute_error(y_test,y_pred))
+print('\nMean Absolute square error:',mean_absolute_error(y_test,y_pred))
 print('Mean squared error:', mean_squared_error(y_test,y_pred))
 print('Variance score:',r2_score(y_test,y_pred))
 print('Training Accuracy:',model.coef_)

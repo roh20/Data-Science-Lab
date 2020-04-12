@@ -5,10 +5,8 @@
 
 
 import pandas as pd
-import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
 sns.set(color_codes=True)
 
 
@@ -18,8 +16,6 @@ sns.set(color_codes=True)
 #Importing Dataset
 dataset = pd.read_csv('Automobile_data.csv')
 print('Dataset first 5 rows head(5):\n',dataset.head(5))
-print('Dataset last 5 rows tail(5):\n',dataset.tail(5))
-print('Dataset column types:\n',dataset.dtypes)
 
 
 # In[114]:
@@ -106,7 +102,7 @@ sns.boxplot(x=dataset['highway mileage(mpg)'])
 Q1 = dataset.quantile(0.25)
 Q3 = dataset.quantile(0.75)
 iqr = Q3-Q1
-print(iqr)
+print('\Inter Quantile Range:\n',iqr)
 
 
 # In[123]:
@@ -126,7 +122,7 @@ plt.xlabel('Make');
 plt.figure(figsize=(20,10))
 c= dataset.corr()
 sns.heatmap(c,cmap="BrBG",annot=True)
-c
+print('\nCorrelation:\n',c)
 
 
 # In[124]:

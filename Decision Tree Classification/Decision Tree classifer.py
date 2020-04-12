@@ -34,7 +34,7 @@ dataset.head(5)
 print("Dataset informartion:\n")
 dataset.info()
 print("\n\nDataset null info:\n")
-dataset.isnull()
+print(dataset.isnull().sum())
 
 
 # In[94]:

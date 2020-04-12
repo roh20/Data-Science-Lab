@@ -14,7 +14,8 @@ import matplotlib.pyplot as plt
 
 #Importing dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
-dataset.head(5)
+print('Dataset Head(5):')
+print(dataset.head(5))
 
 
 # In[97]:
@@ -23,7 +24,7 @@ dataset.head(5)
 print("Dataset informartion:\n")
 dataset.info()
 print("\n\nDataset null info:\n")
-dataset.isnull()
+print(dataset.isnull().sum())
 
 
 # In[98]:
@@ -32,10 +33,6 @@ dataset.isnull()
 # Storing independent and dependent variable
 X = dataset.iloc[:,[2,3]]
 y = dataset.iloc[:,-1]
-X.head(5)
-y.head(10)
-
-
 # In[99]:
 
 

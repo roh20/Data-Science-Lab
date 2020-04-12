@@ -41,6 +41,8 @@ plt.show()
 # Fitting K-Means to the dataset
 kmeans = KMeans(n_clusters = 5, init = 'k-means++', random_state = 42)
 y_kmeans = kmeans.fit_predict(X)
+y_pred = kmeans.predict(X)
+print('Predictions on X:\n',y_pred)
 
 
 # In[6]:
